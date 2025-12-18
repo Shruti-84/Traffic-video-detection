@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Helmet Detection API</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <h1>🛡️ Helmet Detection API</h1>
+    <p>Upload a video to detect helmets on riders</p>
+</div>
+
+<div class="upload-container">
+    <form method="POST" enctype="multipart/form-data">
+
+        <div class="upload-box">
+
+            <h3>📁 Choose a Video File</h3>
+            <p>Drag & drop a video or click below</p>
+
+            <!-- Hidden file input -->
+            <input type="file" id="videoUpload" name="video" accept="video/*" required>
+
+            <!-- Label acts as button -->
+            <label for="videoUpload" class="browse-btn">
+                Browse Files
+            </label>
+
+            <br><br>
+
+            <!-- Submit button -->
+            <button type="submit" class="submit-btn">
+                Upload & Detect
+            </button>
+
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

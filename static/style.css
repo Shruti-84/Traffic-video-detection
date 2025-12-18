@@ -1,0 +1,35 @@
+/* Hide file input */
+.upload-box input[type="file"] {
+    display: none;
+}
+
+/* Browse button */
+.browse-btn {
+    display: inline-block;
+    background: #6a6ff5;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.browse-btn:hover {
+    opacity: 0.9;
+}
+
+/* Submit button */
+.submit-btn {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.submit-btn:hover {
+    opacity: 0.9;
+}

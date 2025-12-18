@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="header">
+    <h1>✅ Detection Result</h1>
+    <p>Annotated video & detection logs</p>
+</div>
+
+<div class="result-container">
+
+    <h2>🎥 Output Video</h2>
+    <video controls>
+        <source src="/{{ video_path }}" type="video/mp4">
+    </video>
+
+    <h2>📊 Summary</h2>
+    <ul class="summary">
+        <li>Total Detections: {{ logs.summary.total_detections }}</li>
+        <li>With Helmet: {{ logs.summary.with_helmet }}</li>
+        <li>Without Helmet: {{ logs.summary.without_helmet }}</li>
+    </ul>
+
+    <h2>📄 Detection Logs</h2>
+    <table>
+        <tr>
+            <th>Frame</th>
+            <th>Label</th>
+            <th>Confidence (%)</th>
+        </tr>
+        {% for log in logs.details %}
+        <tr>
+            <td>{{ log.frame }}</td>
+            <td>{{ log.label }}</td>
+            <td>{{ log.confidence }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a class="back-btn" href="/">⬅ Upload Another Video</a>
+</div>
+
+</body>
+</html>
